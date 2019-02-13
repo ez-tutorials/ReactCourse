@@ -1,12 +1,14 @@
 import React from 'react';
 
 class SearchBar extends React.Component {
+    // initialize
     state = {term: ''};
     onInputChange = event => {
         this.setState({term: event.target.value});
     };
 
     onFormSubmit = event => {
+        // preven page refresh
         event.preventDefault();
         this.props.onFormSubmit(this.state.term);
     };
@@ -17,6 +19,7 @@ class SearchBar extends React.Component {
                 <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="field">
                         <label> Video Search</label>
+                        {/* sign value to input element */}
                         <input
                             type="text"
                             value={this.state.term}
