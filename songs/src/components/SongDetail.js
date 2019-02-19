@@ -1,7 +1,5 @@
 import React from 'react'
-import {
-  connect
-} from 'react-redux'
+import { connect } from 'react-redux'
 
 // destructure props
 const SongDetail = ({ song }) => {
@@ -19,12 +17,12 @@ const SongDetail = ({ song }) => {
       </p>
     </div>
   );
-};
+}
 
 const mapStateToProps = state => {
   return {
     song: state.selectedSong
   };
-};
+}
 
 export default connect(mapStateToProps)(SongDetail);
